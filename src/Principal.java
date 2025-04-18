@@ -13,9 +13,8 @@ public class Principal {
         otraPelicula.fechaDeLanzamiento = 1998;
         otraPelicula.duracionEnMinutos = 110;
 
-        System.out.println("Película: " + otraPelicula.nombre);
-        System.out.println("Año de estreno: " + otraPelicula.fechaDeLanzamiento);
-
-
+        System.out.println("Otra Película: " + otraPelicula.nombre);
+        System.out.println("Año estreno:  " + otraPelicula.fechaDeLanzamiento);
     }
 }
+
