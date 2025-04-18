@@ -10,7 +10,7 @@ public class Principal {
 
         Pelicula otraPelicula = new Pelicula();
         otraPelicula.nombre = "Matrix";
-        otraPelicula.fechaDeLanzamiento = 1998;
+        otraPelicula.fechaDeLanzamiento = 1999;
         otraPelicula.duracionEnMinutos = 110;
 
         System.out.println("Otra Película: " + otraPelicula.nombre);
