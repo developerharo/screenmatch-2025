@@ -1,17 +1,6 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Pelicula extends Titulo {
-    private String director;
-
-    public String getDirector() {
-        return director;
-    }
-
-    public void setDirector(String director) {
-        this.director = director;
-    }
-}
-/*public class Pelicula {
+public class Titulo {
     private String nombre;
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
@@ -56,7 +45,7 @@ public class Pelicula extends Titulo {
     }
 
     public void muestraFichaTecnica(){
-        System.out.println("El nombre de la película es: " + nombre);
+        System.out.println("El nombre es: " + nombre);
         System.out.println("Su fecha de lanzamiento es: " + fechaDeLanzamiento);
         System.out.println("Duración en minutos: "+ getDuracionEnMinutos());
     }
@@ -69,4 +58,4 @@ public class Pelicula extends Titulo {
     public double calculaMedia(){
         return sumaDeLasEvaluaciones / totalDelasEvaluaciones;
     }
-*/
+}
