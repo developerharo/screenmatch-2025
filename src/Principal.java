@@ -1,5 +1,6 @@
-import com.aluracursos.screenmatch.herencia.Cuenta;
+import com.aluracursos.screenmatch.calculos.CalculadoraDeTiempo;
 import com.aluracursos.screenmatch.modelos.Pelicula;
+import com.aluracursos.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -14,23 +15,20 @@ public class Principal {
         miPelicula.evalua(10);
         miPelicula.evalua(7.8);
         System.out.println(miPelicula.getTotalDelasEvaluaciones());
-        System.out.println(miPelicula.calculaMedia());
-    }
+        System.out.println("Média de evaluaciones de la película: " + miPelicula.calculaMedia());
 
-    public static class CuentaAhorro extends Cuenta {
+        Serie casaDragon = new Serie();
+        casaDragon.setNombre("La casa del dragón");
+        casaDragon.setFechaDeLanzamiento(2022);
+        casaDragon.setTemporadas(1);
+        casaDragon.setMinutosPorEpisodio(50);
+        casaDragon.setEpisodiosPorTemporada(10);
+        casaDragon.muestraFichaTecnica();
+        System.out.println(casaDragon.getDuracionEnMinutos());
 
-        private double tasaDeIntereses;
-
-        /*public void calcularIntereses() {
-            double intereses= this.getSaldo() * tasaDeIntereses;
-            System.out.println("Intereses actuales : " + intereses);
-        }*/
-
-        public void retirar(double valor) {
-            double tasaDeRetiro= 0.01;
-            super.retirar(valor + tasaDeRetiro);
-        }
-
-        //getters y setters
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miPelicula);
+        calculadora.incluye(casaDragon);
+        System.out.println(calculadora.getTiempoTotal());
     }
 }
