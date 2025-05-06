@@ -1,6 +1,8 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Pelicula extends Titulo {
+import com.aluracursos.screenmatch.calculos.Clasificable;
+
+public class Pelicula extends Titulo implements Clasificable {
     private String director;
 
     public String getDirector() {
@@ -9,6 +11,11 @@ public class Pelicula extends Titulo {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClasificacion() {
+        return (int) (calculaMedia() / 2);
     }
 }
 /*public class Pelicula {
