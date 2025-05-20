@@ -8,37 +8,29 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Pelicula miPelicula = new Pelicula();
-        miPelicula.setNombre("Encanto");
-        miPelicula.setFechaDeLanzamiento(2021);
+        Pelicula miPelicula = new Pelicula("Encanto", 2021);
         miPelicula.setDuracionEnMinutos(120);
-        miPelicula.setIncluidoEnElPlan(true);
 
         miPelicula.muestraFichaTecnica();
         miPelicula.evalua(10);
         miPelicula.evalua(10);
         miPelicula.evalua(7.8);
-        System.out.println(miPelicula.getTotalDelasEvaluaciones());
-        System.out.println(miPelicula.calculaMedia());
+        System.out.println("Total de evaluaciones: " + miPelicula.getTotalDelasEvaluaciones());
         System.out.println("Média de evaluaciones de la película: " +miPelicula.calculaMedia());
 
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La casa del dragón");
-        casaDragon.setFechaDeLanzamiento(2022);
-        casaDragon.setTemporadas(1);
-        casaDragon.setMinutosPorEpisodio(50);
-        casaDragon.setEpisodiosPorTemporada(10);
-        casaDragon.muestraFichaTecnica();
-        System.out.println(casaDragon.getDuracionEnMinutos());
+        Serie lost = new Serie("Lost", 2000);
+        lost.muestraFichaTecnica();
+        lost.setTemporadas(10);
+        lost.setEpisodiosPorTemporada(10);
+        lost.setMinutosPorEpisodio(50);
+        System.out.println("Duracion de la serie: " + lost.getDuracionEnMinutos());
 
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Matrix");
-        otraPelicula.setFechaDeLanzamiento(1998);
+        Pelicula otraPelicula = new Pelicula("Matrix", 2001);
         otraPelicula.setDuracionEnMinutos(180);
 
         CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
         calculadora.incluye(miPelicula);
-        calculadora.incluye(casaDragon);
+        calculadora.incluye(lost);
         calculadora.incluye(otraPelicula);
         System.out.println(calculadora.getTiempoTotal());
 
@@ -47,16 +39,13 @@ public class Principal {
 
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
-        episodio.setNombre("La casa Targaryen");
-        episodio.setSerie(casaDragon);
-        episodio.setTotalVisualizaciones(50);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualizaciones(300);
 
         filtroRecomendacion.filtra(episodio);
 
-        var peliculaDeBruno = new Pelicula();
-        peliculaDeBruno.setNombre("El señor de los anillos 1");
+        var peliculaDeBruno = new Pelicula("El señor de los anillos", 2002);
         peliculaDeBruno.setDuracionEnMinutos(170);
-        peliculaDeBruno.setFechaDeLanzamiento(2002);
 
         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();
         listaDePeliculas.add(peliculaDeBruno);
@@ -65,9 +54,7 @@ public class Principal {
 
         System.out.println("Tamaño de la lista: " + listaDePeliculas.size());
         System.out.println("La primer película es: " + listaDePeliculas.get(0).getNombre());
-
         System.out.println(listaDePeliculas.toString());
-
         System.out.println("toString de la pelicula: " + listaDePeliculas.get(0).toString());
 
     }
